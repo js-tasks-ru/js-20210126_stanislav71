@@ -4,6 +4,12 @@
  * @param {...string} fields - the properties paths to pick
  * @returns {object} - returns the new object
  */
-export const pick = (obj, ...fields) => {
+export const pick = (obj, ...fields) => { 
+    let memo = {};
 
+    [...fields].forEach(field => {
+        if(field in obj)
+            memo[field] = obj[field]
+    });
+    return memo;
 };
