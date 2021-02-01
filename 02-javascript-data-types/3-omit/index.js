@@ -5,7 +5,7 @@
  * @returns {object} - returns the new object
  */
 export const omit = (obj, ...fields) => {
-    let clone = Object.assign({},obj);
+    const clone = Object.assign({},obj);
 
     [...fields].forEach(field => {
         if(field in clone)

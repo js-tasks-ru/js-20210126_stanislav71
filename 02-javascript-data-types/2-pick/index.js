@@ -5,10 +5,10 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => { 
-    let memo = {};
+    const memo = {};
 
     [...fields].forEach(field => {
-        if(field in obj)
+        if(Object.keys(obj).includes(field))
             memo[field] = obj[field]
     });
     return memo;
